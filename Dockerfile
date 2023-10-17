@@ -13,6 +13,7 @@ LABEL maintainer="Jake Jarvis <jake@jarv.is>"
 # https://github.com/aws/aws-cli/blob/master/CHANGELOG.rst
 ENV AWSCLI_VERSION='1.24.4'
 
+RUN pip install "Cython<3"
 RUN pip install --quiet --no-cache-dir awscli==${AWSCLI_VERSION}
 
 ADD entrypoint.sh /entrypoint.sh
